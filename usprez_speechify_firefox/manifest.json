@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name": "Speechify POTUS",
+
+	"version": "0.1",
+
+	"description": "Extract and download documents from the American Presidency Project",
+	"homepage_url": "https://github.com/fmoncomble/usprez_speechify",
+	"icons": {
+		"48": "icons/icon-48.png",
+		"96": "icons/icon-96.png"
+	},
+
+	"permissions": ["activeTab", "downloads", "storage", "*://www.presidency.ucsb.edu/*"],
+	
+	"background": {
+    "scripts": ["background.js", "jszip.min.js"],
+    "persistent": false
+	},
+	
+	"content_scripts": [
+		{
+			"matches": ["https://www.presidency.ucsb.edu/advanced-search*"],
+			"js": ["content_scripts/content.js"],
+			"css": ["content_scripts/content.css"]
+		}
+	],
+	
+	"browser_specific_settings": {
+    	"gecko": {
+    	  "update_url": "https://github.com/fmoncomble/usprez_speechify/releases/latest/download/update_manifest.json"
+	    }
+	}
+}
