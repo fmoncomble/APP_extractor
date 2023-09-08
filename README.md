@@ -19,4 +19,4 @@ Extract and download documents from [The American Presidency Project](https://ww
 - At the top of the list of search results, choose the desired file format (.txt for simple text files or .xml) and click "Extract & Download";
 - A zip file called "Archive.zip" is downloaded, containing files with the full text of the documents listed in the search page;
 - Repeat for each page of search results;
-- Unzip the archives. The texts are named YYYY-MM-DD_Authorn which allows for easy chronological sorting.
+- Unzip the archives. The texts are named YYYY-MM-DD_Author which allows for easy chronological sorting.
