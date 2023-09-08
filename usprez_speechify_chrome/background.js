@@ -133,13 +133,13 @@ ${text}
             let baseFileName = `${date}_${author}${extension}`;
             let index = 1;
 
-            addedFileNames.add(baseFileName);
-
             // Append a number to the file name to make it unique
             while (addedFileNames.has(baseFileName)) {
                 baseFileName = `${date}_${author}_${index}${extension}`;
                 index++;
             }
+
+            addedFileNames.add(baseFileName);
 
             zip.file(baseFileName, fileContent);
 
