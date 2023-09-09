@@ -1,0 +1,20 @@
+{
+  "addons": {
+    "{086e975b-21a8-4001-beee-121a52d6603e}": {
+      "updates": [
+        {
+          "version": "0.1",
+          "update_link": "https://github.com/fmoncomble/usprez_speechify/releases/download/v0.1/usprez_speechify_firefox.xpi"
+        },
+        {
+          "version": "0.2",
+          "update_link": "https://github.com/fmoncomble/usprez_speechify/releases/download/v0.2/usprez_speechify_firefox.xpi"
+        },
+        {
+          "version": "0.3",
+          "update_link": "https://github.com/fmoncomble/usprez_speechify/releases/download/v0.3/usprez_speechify_firefox.xpi"
+        } 
+      ]
+    }
+  }
+}
