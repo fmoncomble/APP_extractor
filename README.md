@@ -1,3 +1,5 @@
+<base target="_blank">
+
 # ![icon-96](https://github.com/fmoncomble/usprez_speechify/assets/59739627/45a9303a-6e78-4ae5-b99e-4034e0341eb8)
 
 # Speechify POTUS
