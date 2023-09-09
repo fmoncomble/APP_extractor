@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Speechify POTUS",
 
-	"version": "0.2",
+	"version": "0.3",
 
 	"description": "Extract and download documents from the American Presidency Project",
 	"homepage_url": "https://github.com/fmoncomble/af_speechify",

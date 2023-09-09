@@ -8,17 +8,19 @@ fieldset.textContent = 'Extract and save documents in the desired format';
 anchor.appendChild(fieldset);
 
 const select = document.createElement('select');
-const txt = new Option ('TXT', 'txt');
-const xml = new Option ('XML', 'xml');
+const txt = new Option('TXT', 'txt');
+const xml = new Option('XML', 'xml');
 select.appendChild(txt);
 select.appendChild(xml);
 
 select.addEventListener('change', function() {
-	selectedFormat = this.value;
-	chrome.runtime.sendMessage({action: 'setFormat', format: selectedFormat}, response => {
-		console.log('Chosen format: ', response);
-		}
-	)
+    selectedFormat = this.value;
+    chrome.runtime.sendMessage({
+        action: 'setFormat',
+        format: selectedFormat
+    }, response => {
+        console.log('Chosen format: ', response);
+    })
 });
 
 const extractButton = document.createElement('button');
@@ -45,27 +47,36 @@ const spinner = document.createElement('div');
 spinner.classList.add('spinner'); // Add a class for styling
 extractionContainer.appendChild(spinner);
 
+// Create container for downloaded files list
+const downloadedFilesContainer = document.createElement('div');
+downloadedFilesContainer.classList.add('fileList');
+downloadedFilesContainer.style.display = 'none';
+fieldset.appendChild(downloadedFilesContainer);
+
 // Message passing to notify the background script when the button is clicked
 extractButton.addEventListener('click', () => {
-  // Show the extraction container
-  extractionContainer.style.display = 'block';
+    // Show the extraction container
+    extractionContainer.style.display = 'block';
+    downloadedFilesContainer.textContent = '';
+    downloadedFilesContainer.style.display = 'none';    
 
-chrome.runtime.sendMessage({ action: 'performExtraction', url: window.location.href }, response => {
-  console.log('Response object:', response); // Log the entire response object
+    chrome.runtime.sendMessage({
+        action: 'performExtraction',
+        url: window.location.href
+    }, response => {
+        console.log('Response object:', response); // Log the entire response object
 
-  // Hide the extraction container
-  extractionContainer.style.display = 'none';
+        // Hide the extraction container
+        extractionContainer.style.display = 'none';
 
-  if (response.success) {
-    // Display the downloaded files
-    const downloadedFilesContainer = document.createElement('div');
-    downloadedFilesContainer.classList.add('fileList');
-    downloadedFilesContainer.textContent = `Downloaded files:\n${response.fetchedUrls.join(', ')}\nDone!`;
-    fieldset.appendChild(downloadedFilesContainer);
-  } else {
-    console.error('Error:', response.error);
-    // Handle error
-  }
-});
+        if (response.success) {
+            // Display the downloaded files
+            downloadedFilesContainer.style.display = 'block';
+            downloadedFilesContainer.textContent = `Downloaded files:\n${response.fetchedUrls.join(', ')}\nDone!`;
+        } else {
+            console.error('Error:', response.error);
+            // Handle error
+        }
+    });
 
 });
