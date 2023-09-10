@@ -1,8 +1,5 @@
-// contentScript.js
-
 // Inject the button into the page
 const anchor = document.querySelector('.view-header');
-
 const fieldset = document.createElement('fieldset');
 fieldset.textContent = 'Extract and save documents in the desired format';
 anchor.appendChild(fieldset);
