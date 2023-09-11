@@ -4,16 +4,20 @@
       "updates": [
         {
           "version": "0.1",
-          "update_link": "https://github.com/fmoncomble/usprez_speechify/releases/download/v0.1/usprez_speechify_firefox.xpi"
+          "update_link": "https://github.com/fmoncomble/APP_extractor/releases/download/v0.1/usprez_speechify_firefox.xpi"
         },
         {
           "version": "0.2",
-          "update_link": "https://github.com/fmoncomble/usprez_speechify/releases/download/v0.2/usprez_speechify_firefox.xpi"
+          "update_link": "https://github.com/fmoncomble/APP_extractor/releases/download/v0.2/usprez_speechify_firefox.xpi"
         },
         {
           "version": "0.3",
-          "update_link": "https://github.com/fmoncomble/usprez_speechify/releases/download/v0.3/usprez_speechify_firefox.xpi"
-        } 
+          "update_link": "https://github.com/fmoncomble/APP_extractor/releases/download/v0.3/usprez_speechify_firefox.xpi"
+        },
+        {
+          "version": "0.4",
+          "update_link": "https://github.com/fmoncomble/APP_extractor/releases/download/v0.4/usprez_speechify_firefox.xpi"
+        }
       ]
     }
   }

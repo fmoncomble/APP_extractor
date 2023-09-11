@@ -1,11 +1,11 @@
 {
 	"manifest_version": 2,
-	"name": "Speechify POTUS",
+	"name": "APP Extractor",
 
-	"version": "0.3",
+	"version": "0.4",
 
 	"description": "Extract and download documents from the American Presidency Project",
-	"homepage_url": "https://github.com/fmoncomble/usprez_speechify",
+	"homepage_url": "https://github.com/fmoncomble/APP_extractor",
 	"icons": {
 		"48": "icons/icon-48.png",
 		"96": "icons/icon-96.png"
