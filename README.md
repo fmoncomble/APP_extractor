@@ -5,9 +5,9 @@ Extract and download documents from [The American Presidency Project](https://ww
 
 ## Installation
 ### Firefox (recommended)
-[![Install add-on](https://user-images.githubusercontent.com/59739627/266694762-be8788da-7b26-4eb8-bee4-cb73cb32293d.png)](https://github.com/fmoncomble/usprez_speechify/releases/latest/download/usprez_speechify_firefox.xpi)
+[![Install add-on](https://user-images.githubusercontent.com/59739627/266694762-be8788da-7b26-4eb8-bee4-cb73cb32293d.png)](https://github.com/fmoncomble/usprez_speechify/releases/latest/download/APP_extractor_firefox.xpi)
 ### Chrome / Edge
-- [Download the zip package](https://github.com/fmoncomble/usprez_speechify/releases/latest/download/usprez_speechify_chrome.zip);
+- [Download the zip package](https://github.com/fmoncomble/usprez_speechify/releases/latest/download/APP_extractor_chrome.zip);
 - Unzip the archive;
 - Open the extension manager (`chrome://extensions` or `edge://extensions`);
 - Enable "Developer mode";
