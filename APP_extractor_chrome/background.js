@@ -123,10 +123,10 @@ ${text}
             if (selectedFormat === 'xml') {
                 extension = '.xml';
                 fileContent = `
-<Text author="${author}" date="${date}">
+<text author="${author}" date="${date}">
 ${title}
 ${text}
-</Text>
+</text>
             `;
             }
 
