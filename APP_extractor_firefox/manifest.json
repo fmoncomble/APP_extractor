@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "APP Extractor",
 
-	"version": "0.5",
+	"version": "0.6",
 
 	"description": "Extract and download documents from the American Presidency Project",
 	"homepage_url": "https://github.com/fmoncomble/APP_extractor",
@@ -28,7 +28,7 @@
 	
 	"browser_specific_settings": {
     	"gecko": {
-    	  "update_url": "https://github.com/fmoncomble/usprez_speechify/releases/latest/download/update_manifest.json"
+    	  "update_url": "https://github.com/fmoncomble/APP_extractor/releases/latest/download/update_manifest.json"
 	    }
 	}
 }
