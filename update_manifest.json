@@ -25,6 +25,10 @@
         {
           "version": "0.6",
           "update_link": "https://github.com/fmoncomble/APP_extractor/releases/download/v0.6/APP_Extractor_firefox.xpi"
+        },
+        {
+          "version": "0.6.1",
+          "update_link": "https://github.com/fmoncomble/APP_extractor/releases/download/v0.6.1/APP_Extractor_firefox.xpi"
         }
       ]
     }

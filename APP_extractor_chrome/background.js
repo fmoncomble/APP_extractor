@@ -123,8 +123,8 @@ ${text}
             if (selectedFormat === 'xml') {
                 extension = '.xml';
                 fileContent = `
-<text author="${author}" date="${date}">
-${title}
+<text author="${author}" title="${title}" date="${date}">
+<ref target="${url}">Lien vers l'original</ref><lb></lb><lb></lb>
 ${text}
 </text>
             `;
