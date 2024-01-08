@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "APP Extractor",
 
-	"version": "0.6.1",
+	"version": "0.7",
 
 	"description": "Extract and download documents from the American Presidency Project",
 	"homepage_url": "https://github.com/fmoncomble/APP_extractor",
@@ -14,15 +14,21 @@
 	"permissions": ["activeTab", "downloads", "storage", "*://www.presidency.ucsb.edu/*"],
 	
 	"background": {
-    "page": "background.html",
+    "scripts": ["background.js", "jszip.min.js"],
     "persistent": false
 	},
 	
 	"content_scripts": [
 		{
-			"matches": ["*://www.presidency.ucsb.edu/advanced-search*"],
-			"js": ["content_scripts/content.js", "jszip.min.js"],
+			"matches": ["https://www.presidency.ucsb.edu/advanced-search*"],
+			"js": ["content_scripts/content.js"],
 			"css": ["content_scripts/content.css"]
 		}
-	]
+	],
+	
+	"browser_specific_settings": {
+    	"gecko": {
+    	  "update_url": "https://github.com/fmoncomble/APP_extractor/releases/latest/download/update_manifest.json"
+	    }
+	}
 }
