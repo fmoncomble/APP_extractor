@@ -1,4 +1,4 @@
-let selectedFormat = 'txt';
+// let selectedFormat = 'txt';
 let url;
 let doc;
 let abortExtraction = false;
@@ -7,6 +7,8 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'performExtraction') {
         try {
             url = message.url + "&page=0";
+            selectedFormat = message.format;
+            console.log('Output format: ', selectedFormat);
             performExtractAndSave(url)
                 .then(fetchedUrls => {
                     sendResponse({
@@ -31,8 +33,6 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
                 error: 'An error occurred'
             });
         }
-    } else if (message.action === 'setFormat') {
-        selectedFormat = message.format;
     } else if (message.action === 'abortExtraction') {
     	abortExtraction = true;
     }
@@ -100,7 +100,7 @@ async function performExtractAndSave(initialUrl) {
 						return;
 					}
 
-					const title = titleDiv.textContent.trim().replaceAll("\"", "");
+					const title = titleDiv.textContent.trim().replaceAll(/\p{P}/gu, "");
 					const text = bodyDiv.textContent.trim().replaceAll("\&", "and");
 					const author = authorElement.querySelector('a').textContent;
 					const dateString = dateElement ? dateElement.textContent : 'Unknown Date';
@@ -159,7 +159,7 @@ async function performExtractAndSave(initialUrl) {
 					`;
 					}
 
-					let baseFileName = `${date}_${author}${extension}`;
+					let baseFileName = `${date}_${author.replaceAll(/\p{P}/gu, '').replaceAll(/\s/g, '_')}${extension}`;
 					let index = 1;
 
 					// Append a number to the file name to make it unique
@@ -196,7 +196,7 @@ async function performExtractAndSave(initialUrl) {
     
     await downloadZip(zipBlob, zipFileName);
     
-    return Array.from(addedFileNames).length;
+    return Array.from(addedFileNames);
 }
 
 function getNextPageUrl() {

@@ -21,22 +21,19 @@ anchor.appendChild(fieldset);
 const extractButtonsContainer = document.createElement('div');
 extractButtonsContainer.style.display = 'inline';
 
+let selectedFormat = 'txt'
+
 const select = document.createElement('select');
 const txt = new Option('TXT', 'txt');
 const xml = new Option('XML', 'xml');
 select.appendChild(txt);
 select.appendChild(xml);
 
-let selectedFormat = 'txt';
+console.log('Output format: ', selectedFormat);
 
 select.addEventListener('change', function() {
     selectedFormat = this.value;
-    chrome.runtime.sendMessage({
-        action: 'setFormat',
-        format: selectedFormat
-    }, response => {
-        console.log('Chosen format: ', response);
-    })
+    console.log('Output format: ', selectedFormat);
 });
 
 const extractButton = document.createElement('button');
@@ -76,7 +73,7 @@ extractionContainer.appendChild(spinner);
 // Create the extraction message element
 const extractionMessage = document.createElement('div');
 extractionMessage.id = 'extractionMessage';
-extractionMessage.textContent = 'Extracting...';
+extractionMessage.textContent = 'Launching extraction...';
 extractionContainer.appendChild(extractionMessage);
 
 function updateRange() {
@@ -91,7 +88,7 @@ function updateRange() {
 			if (msg) {
 				console.log('Message from background: ', msg);
 				console.log('Updating range');
-				extractionMessage.textContent = `Extracting ${msg}...`;
+				extractionMessage.textContent = `Extracting ${msg} as ${selectedFormat} files...`;
 			} else {
 				console.error('No message from background');
 			}
@@ -120,11 +117,13 @@ extractButton.addEventListener('click', () => {
     chrome.runtime.sendMessage({
         action: 'performExtraction',
         url: window.location.href,
+        format: selectedFormat
     }, response => {
         console.log('Response object:', response); // Log the entire response object
 
         // Hide the extraction container
         extractionContainer.style.display = 'none';
+        extractionMessage.textContent = 'Launching extraction...';
         
         // Reset abort button
         abortButton.style.display = 'none';
@@ -136,7 +135,7 @@ extractButton.addEventListener('click', () => {
         if (response.success) {
             // Display the number of downloaded files
             downloadedFilesContainer.style.display = 'block';
-            downloadedFilesContainer.textContent = `Done!\n${response.fetchedUrls} files downloaded`;
+            downloadedFilesContainer.textContent = `Done!\n${response.fetchedUrls.length} files downloaded:\n${response.fetchedUrls.slice(0, 20).join(', ')}...`;
         } else {
             console.error('Error:', response.error);
             // Handle error
