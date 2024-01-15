@@ -2,6 +2,13 @@
 
 Extract and download documents from [The American Presidency Project](https://www.presidency.ucsb.edu/)
 
+### Cite this software
+If you use this add-on as part of your research, please cite the following reference:  
+
+Moncomble, F. (2024). *APP_Extractor* (Version 0.7.1) [JavaScript]. Arras, France: Université d’Artois. Available from: https://github.com/fmoncomble/APP_extractor (First version 2023)
+
+
+
 
 ## Installation
 ### Firefox (recommended)
