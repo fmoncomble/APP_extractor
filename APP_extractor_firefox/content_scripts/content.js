@@ -111,6 +111,7 @@ extractButton.addEventListener('click', () => {
 
     // Show the extraction container
     extractionContainer.style.display = 'block';
+	fieldset.style.cursor = 'wait';
     downloadedFilesContainer.textContent = '';
     downloadedFilesContainer.style.display = 'none';
 
@@ -123,6 +124,7 @@ extractButton.addEventListener('click', () => {
 
         // Hide the extraction container
         extractionContainer.style.display = 'none';
+		fieldset.style.cursor = '';
         extractionMessage.textContent = 'Launching extraction...';
         
         // Reset abort button
