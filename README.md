@@ -1,11 +1,9 @@
-# ![icon-96](https://github.com/fmoncomble/usprez_speechify/assets/59739627/45a9303a-6e78-4ae5-b99e-4034e0341eb8) APP Extractor
-
 Extract and download documents from [The American Presidency Project](https://www.presidency.ucsb.edu/)
 
 ### Cite this software
 If you use this add-on as part of your research, please cite the following reference:  
 
-Moncomble, F. (2024). *APP_Extractor* (Version 0.7.1) [JavaScript]. Arras, France: Université d’Artois. Available from: https://github.com/fmoncomble/APP_extractor (First version 2023)
+Moncomble, F. (2024). *APP_Extractor* (Version 0.7.2) [JavaScript]. Arras, France: Université d’Artois. Available from: https://fmoncomble.github.io/APP_extractor/ (First version 2023)
 
 
 
